@@ -5,30 +5,48 @@
   padding: 0;
   box-sizing: border-box;
 }
-html {
-  scroll-behavior: smooth;
-}
-body {
-  font-family: "Roboto", sans-serif;
-}
-header {
-  position: absolute;
-  width: 100%;
-}
-
-img {
-  max-width: 100%;
-  width: 100%;
-}
 :root {
   --green: #54b192;
   --green-l: #a4cec0;
   --smooth: all 0.3s ease-in;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+/* #overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 4;
+  display: none;
+}
+
+#overlay.show {
+  display: initial;
+} */
+
+header {
+  position: absolute;
+  width: 100%;
+  background-color: black;
+}
+
+img {
+  max-width: 50px;
+  width: auto;
+}
+
 button {
   text-align: center;
-  color: #58c261;
   background-color: var(--gray);
   padding: 0.8rem 2.5rem;
   border: none;
@@ -36,17 +54,23 @@ button {
   cursor: pointer;
   transition: var(--smooth);
 }
-
 button :hover {
   background-color: var(--green-l);
   transition: var(--smooth);
 }
 
 .container {
-  max-width: 1200%;
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   padding: 0 10px;
+}
+
+/*logo*/
+.navbar__logo img {
+  max-width: 57px;
+  height: auto;
+  object-fit: cover;
 }
 
 /*Navbar*/
@@ -54,27 +78,27 @@ button :hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
+  padding: 20px;
+  background-color: var(--gray);
 }
 
-/*logo*/
-.navbar__logo {
-  width: 57px;
-  height: 57px;
-  object-fit: cover;
-}
 /*link*/
 .navbar__links {
-  position: fixed;
+  display: flex;
+  position: sticky;
+  list-style: none;
   top: 0;
-  left: 0;
-  width: 60%;
-  height: auto;
+  margin: auto;
   background-color: var(--gray);
   z-index: 5;
-  transition: var(--smooth);
-  transform: translateX(-100%);
-  opacity: 0;
+  transition: color var(--smooth);
+}
+
+.navbar__link {
+  display: block;
+  list-style: none;
+  margin: 30px;
+  margin-top: 10px;
 }
 
 .navbar__links.navbar__open {
@@ -83,18 +107,23 @@ button :hover {
   transition: var(--smooth);
 }
 
-.navbar__link {
-  list-style: none;
-  margin: 50px;
-}
-
 .navbar__link a {
   text-decoration: none;
-  font-weight: 300;
   color: #fff;
   transition: var(--smooth);
 }
 
+.navbar__link a :hover {
+  color: var(--green);
+  transition: var(--smooth);
+}
+
 .navbar__btn {
-  background-color: var(--smooth);
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: var(--green);
+  margin-left: 45px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
 }
