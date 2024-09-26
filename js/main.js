@@ -17,6 +17,18 @@ function displayTime() {
   hr.style.transform = `rotate(${hRotation}deg)`;
   min.style.transform = `rotate(${mRotation}deg)`;
   sec.style.transform = `rotate(${sRotation}deg)`;
-}
 
+  timeLabel.textContent = `${hh.toString().padStart(2, "0")}:${mm
+    .toString()
+    .padStart(2, "0")}:${ss.toString().padStart(2, "0")}`;
+}
 setInterval(displayTime, 1000);
+
+function showPage(pageId) {
+  // An tat ca noi dung
+  const contents = document.querySelectorAll(".content");
+  contents.forEach((content) => content.classList.remove("active"));
+
+  // Hiện nội dung tương ứng
+  document.getElementById(pageId).classList.add("active");
+}

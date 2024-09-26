@@ -24,17 +24,29 @@
           </div>
           <!--Link-->
           <ul class="navbar__links">
-            <li class="navbar__link"><a href="#Time">Time</a></li>
-            <li class="navbar__link"><a href="#Weather">Weather</a></li>
-            <li class="navbar__link"><a href="#Temperature">Temperature</a></li>
-            <li class="navbar__link"><a href="#Button">ButtonRule</a></li>
+            <li class="navbar__link">
+              <a href="#" onclick="showPage('time')">Time</a>
+            </li>
+            <li class="navbar__link">
+              <a href="#" onclick="showPage('weather')">Weather</a>
+            </li>
+            <li class="navbar__link">
+              <a href="#" onclick="showPage('temp')">Temperature</a>
+            </li>
+            <li class="navbar__link">
+              <a href="#" onclick="showPage('but')">ButtonRule</a>
+            </li>
             <a href="#footer"><button class="navbar__btn">Contact</button></a>
           </ul>
         </nav>
       </div>
     </header>
+    <h1 style="color: red">Dashboard Demo</h1>
+    <h2 class="Dasboard">
+      <img src="img/applicationdemo.png" alt="" />
+    </h2>
     <section>
-      <div class="container">
+      <div id="time" class="container">
         <div class="clock">
           <div style="--clr: #ff3d58; --h: 74px" id="hour" class="hand">
             <i></i>
@@ -60,6 +72,15 @@
           <span style="--i: 12"><b>12</b></span>
         </div>
       </div>
+      <!-- <div id="weather" class="container">
+        <h2>Noi dung thoi tiet</h2>
+      </div>
+      <div id="temp" class="container">
+        <h1>noi dung nhiet do</h1>
+      </div>
+      <div class="container">
+        <h1>Nut bam</h1>
+      </div> -->
     </section>
     <script src="./js/main.js"></script>
   </body>

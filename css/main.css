@@ -171,3 +171,8 @@ section {
   height: var(--h);
   border-radius: 8px;
 }
+
+.Dasboard img {
+  margin-top: 100px;
+  width: 100%;
+}
