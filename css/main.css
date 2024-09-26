@@ -1,11 +1,5 @@
-*,
-*:before,
-*:after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: sans-serif;
-  color: #ffffff;
+html {
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -14,20 +8,60 @@
   --smooth: all 0.3s ease-in;
 }
 
-html {
-  scroll-behavior: smooth;
-}
 body {
-  display: flex;
-  margin: 0;
   font-family: "Roboto", sans-serif;
   background-color: #212121;
 }
 
-header {
-  position: absolute;
-  width: 100%;
-  background-color: rgb(8, 8, 8);
+#header {
+  background-color: #130211;
+}
+
+.container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0px auto;
+  padding: 0px auto;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+}
+
+#logo {
+  padding: 5px 0px;
+}
+
+#logo img {
+  max-width: 57px;
+  height: auto;
+  object-fit: cover;
+}
+
+#main-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#main-menu li a {
+  display: block;
+  text-decoration: none;
+  font-weight: bold;
+  color: #f8f8f8;
+  padding: 18px 20px;
+}
+
+.navbar__link a :hover {
+  color: var(--green);
+  transition: var(--smooth);
+}
+
+#main-menu {
+  background-color: var(--gray);
 }
 
 button {
@@ -39,69 +73,9 @@ button {
   cursor: pointer;
   transition: var(--smooth);
 }
+
 button :hover {
   background-color: var(--green-l);
-  transition: var(--smooth);
-}
-
-.container {
-  position: relative;
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 10px;
-}
-
-/*logo*/
-.navbar__logo img {
-  max-width: 57px;
-  height: auto;
-  object-fit: cover;
-}
-
-/*Navbar*/
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background-color: var(--gray);
-}
-
-/*link*/
-.navbar__links {
-  display: flex;
-  position: sticky;
-  list-style: none;
-  top: 0;
-  margin: auto;
-  background-color: var(--gray);
-  z-index: 5;
-  transition: color var(--smooth);
-}
-
-.navbar__link {
-  display: block;
-  list-style: none;
-  margin: 30px;
-  margin-top: 10px;
-}
-
-.navbar__links.navbar__open {
-  transform: translateX(0);
-  opacity: 1;
-  transition: var(--smooth);
-}
-
-.navbar__link a {
-  font-weight: bold;
-  text-decoration: none;
-  color: #fff;
-  transition: var(--smooth);
-}
-
-.navbar__link a :hover {
-  color: var(--green);
   transition: var(--smooth);
 }
 
@@ -115,64 +89,15 @@ button :hover {
   cursor: pointer;
 }
 
-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #212121;
+.content {
+  display: none;
 }
 
-.clock {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.9);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.content.active {
+  display: block;
 }
 
-.clock span {
-  position: absolute;
-  transform: rotate(calc(30deg * var(--i)));
-  inset: 12px;
-  text-align: center;
-}
-
-.clock span b {
-  transform: rotate(calc(-30deg * var(--i)));
-  display: inline-block;
-  font-size: 20px;
-}
-
-.clock::before {
-  content: "";
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: #fff;
-  z-index: 2;
-}
-
-.hand {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-.hand i {
-  position: absolute;
-  background-color: var(--clr);
-  width: 4px;
-  height: var(--h);
-  border-radius: 8px;
-}
-
-.Dasboard img {
-  margin-top: 100px;
-  width: 100%;
+.decor {
+  color: #1b4ebb;
+  font-weight: bold;
 }

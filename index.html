@@ -13,75 +13,84 @@
     />
   </head>
   <body>
-    <!--Header-->
-    <header>
-      <div class="container">
-        <!--navbar-->
-        <nav class="navbar">
-          <!-- logo -->
-          <div class="navbar__logo">
-            <img src="./img/logo1.png" alt="website logo" />
-          </div>
-          <!--Link-->
-          <ul class="navbar__links">
-            <li class="navbar__link">
-              <a href="#" onclick="showPage('time')">Time</a>
-            </li>
-            <li class="navbar__link">
-              <a href="#" onclick="showPage('weather')">Weather</a>
-            </li>
-            <li class="navbar__link">
-              <a href="#" onclick="showPage('temp')">Temperature</a>
-            </li>
-            <li class="navbar__link">
-              <a href="#" onclick="showPage('but')">ButtonRule</a>
-            </li>
-            <a href="#footer"><button class="navbar__btn">Contact</button></a>
+    <div id="wraper">
+      <div id="header">
+        <nav class="container">
+          <a href="" id="logo">
+            <img src="/img/logo1.png" alt="Internet of Things" />
+          </a>
+          <ul>
+            <ul id="main-menu">
+              <li class="navbar__link">
+                <a href="#" onclick="showPage('dashboard')">Dashboard</a>
+              </li>
+              <li class="navbar__link">
+                <a href="#" onclick="showPage('device')">Devices</a>
+              </li>
+              <li class="navbar__link">
+                <a href="#" onclick="showPage('temp')">Temperature</a>
+              </li>
+              <li class="navbar__link">
+                <a href="#" onclick="showPage('but')">ButtonRule</a>
+              </li>
+              <a href="#footer"><button class="navbar__btn">Contact</button></a>
+            </ul>
           </ul>
         </nav>
       </div>
-    </header>
-    <h1 style="color: red">Dashboard Demo</h1>
-    <h2 class="Dasboard">
-      <img src="img/applicationdemo.png" alt="" />
-    </h2>
-    <section>
-      <div id="time" class="container">
-        <div class="clock">
-          <div style="--clr: #ff3d58; --h: 74px" id="hour" class="hand">
-            <i></i>
-          </div>
-          <div style="--clr: #00a6ff; --h: 84px" id="min" class="hand">
-            <i></i>
-          </div>
-          <div style="--clr: #ffffff; --h: 94px" id="sec" class="hand">
-            <i></i>
-          </div>
+    </div>
+    <div id="dashboard" class="content active">
+      <div class="decor">
+        <h1>Dashboard</h1>
+        <form>
+          <h1>Nhiet do co the la:</h1>
+          <h1 id="nhietdo"></h1>
+        </form>
+      </div>
+    </div>
+    <div id="device" class="content">
+      <p>weather day ne</p>
+    </div>
+    <div id="temp" class="content">
+      <p>Nhiet do co the</p>
+    </div>
+    <div id="but" class="content">
+      <p>Nut bam</p>
+    </div>
 
-          <span style="--i: 1"><b>1</b></span>
-          <span style="--i: 2"><b>2</b></span>
-          <span style="--i: 3"><b>3</b></span>
-          <span style="--i: 4"><b>4</b></span>
-          <span style="--i: 5"><b>5</b></span>
-          <span style="--i: 6"><b>6</b></span>
-          <span style="--i: 7"><b>7</b></span>
-          <span style="--i: 8"><b>8</b></span>
-          <span style="--i: 9"><b>9</b></span>
-          <span style="--i: 10"><b>10</b></span>
-          <span style="--i: 11"><b>11</b></span>
-          <span style="--i: 12"><b>12</b></span>
-        </div>
-      </div>
-      <!-- <div id="weather" class="container">
-        <h2>Noi dung thoi tiet</h2>
-      </div>
-      <div id="temp" class="container">
-        <h1>noi dung nhiet do</h1>
-      </div>
-      <div class="container">
-        <h1>Nut bam</h1>
-      </div> -->
-    </section>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+    <!-- lien ket voi functions.js -->
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyDgNVgmp_by1ElotbugnN1JqEsevId5otk",
+        authDomain: "iot-webdemo.firebaseapp.com",
+        databaseURL: "https://iot-webdemo-default-rtdb.firebaseio.com",
+        projectId: "iot-webdemo",
+        storageBucket: "iot-webdemo.appspot.com",
+        messagingSenderId: "767860821",
+        appId: "1:767860821:web:25242520e7430a7b03b4dc",
+        measurementId: "G-6ZF4R0B43D",
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+      var nhietdo = document.getElementById("nhietdo");
+      var dbRef = firebase.database().ref().child("Nhiet do");
+      dbRef.on("value", (snap) => (nhietdo.innerText = snap.val()));
+    </script>
     <script src="./js/main.js"></script>
   </body>
 </html>
