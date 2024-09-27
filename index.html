@@ -28,10 +28,10 @@
                 <a href="#" onclick="showPage('device')">Devices</a>
               </li>
               <li class="navbar__link">
-                <a href="#" onclick="showPage('temp')">Temperature</a>
+                <a href="#" onclick="showPage('temp')">Graph</a>
               </li>
               <li class="navbar__link">
-                <a href="#" onclick="showPage('but')">ButtonRule</a>
+                <a href="#" onclick="showPage('but')">About</a>
               </li>
               <a href="#footer"><button class="navbar__btn">Contact</button></a>
             </ul>
@@ -39,12 +39,26 @@
         </nav>
       </div>
     </div>
+    <div class="timereal">
+      <div id="timeLabel"></div>
+    </div>
     <div id="dashboard" class="content active">
-      <div class="decor">
-        <h1>Dashboard</h1>
+      <div class="tem">
         <form>
-          <h1>Nhiet do co the la:</h1>
+          <h1>Nhiệt độ cơ thể:</h1>
           <h1 id="nhietdo"></h1>
+        </form>
+      </div>
+      <div class="heart">
+        <form>
+          <h1>Nhịp tim:</h1>
+          <h1 id="nhiptim"></h1>
+        </form>
+      </div>
+      <div class="humidity">
+        <form>
+          <h1>Độ ẩm:</h1>
+          <h1 id="doam"></h1>
         </form>
       </div>
     </div>
@@ -90,6 +104,14 @@
       var nhietdo = document.getElementById("nhietdo");
       var dbRef = firebase.database().ref().child("Nhiet do");
       dbRef.on("value", (snap) => (nhietdo.innerText = snap.val()));
+
+      var nhiptim = document.getElementById("nhiptim");
+      var dbRef2 = firebase.database().ref().child("Nhip tim");
+      dbRef2.on("value", (snap) => (nhiptim.innerText = snap.val()));
+
+      var doam = document.getElementById("doam");
+      var dbRef3 = firebase.database().ref().child("Do am");
+      dbRef3.on("value", (snap) => (doam.innerText = snap.val()));
     </script>
     <script src="./js/main.js"></script>
   </body>

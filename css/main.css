@@ -5,12 +5,14 @@ html {
 :root {
   --green: #54b192;
   --green-l: #a4cec0;
+  --green-h: #086848;
   --smooth: all 0.3s ease-in;
 }
 
 body {
   font-family: "Roboto", sans-serif;
   background-color: #212121;
+  background-image: url(/img/background1.gif);
 }
 
 #header {
@@ -51,12 +53,21 @@ nav {
   display: block;
   text-decoration: none;
   font-weight: bold;
-  color: #f8f8f8;
+  color: #000000;
   padding: 18px 20px;
 }
 
+#main-menu li a :hover {
+  background-color: var(--green-h);
+}
+
+.navbar__link a {
+  background-color: #54b192;
+  border-radius: 100px;
+  border: none;
+}
+
 .navbar__link a :hover {
-  color: var(--green);
   transition: var(--smooth);
 }
 
@@ -67,7 +78,7 @@ nav {
 button {
   text-align: center;
   background-color: var(--gray);
-  padding: 0.8rem 2.5rem;
+  padding: 1rem 2.5rem;
   border: none;
   border-radius: 100px;
   cursor: pointer;
@@ -75,17 +86,17 @@ button {
 }
 
 button :hover {
-  background-color: var(--green-l);
+  background-color: var(--green-h);
   transition: var(--smooth);
 }
 
 .navbar__btn {
   font-size: 1rem;
   font-weight: bold;
-  background-color: var(--green);
+  background-color: var(--green-l);
   margin-left: 45px;
   border: none;
-  border-radius: 20px;
+
   cursor: pointer;
 }
 
@@ -97,7 +108,36 @@ button :hover {
   display: block;
 }
 
-.decor {
-  color: #1b4ebb;
+.timereal {
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+#timeLabel {
+  margin-top: 20px;
+  font-size: 24px;
+  color: #f8f8f8;
+}
+
+.tem {
+  border: 2px solid var(--green);
+  color: #f8f8f8;
   font-weight: bold;
+  border-radius: 50px;
+  text-align: center;
+}
+
+.heart {
+  color: #f8f8f8;
+  border: 2px solid var(--green);
+  margin-top: 10px;
+  border-radius: 50px;
+}
+
+.humidity {
+  color: #f8f8f8;
+  border: 2px solid var(--green);
+  margin-top: 10px;
+  border-radius: 50px;
 }

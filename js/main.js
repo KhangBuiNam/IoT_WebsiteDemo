@@ -1,28 +1,38 @@
-let hr = document.getElementById("hour");
-let min = document.getElementById("min");
-let sec = document.getElementById("sec");
-
 function displayTime() {
   let date = new Date();
-
-  // Getting hour, mins, secs from date
   let hh = date.getHours();
   let mm = date.getMinutes();
   let ss = date.getSeconds();
+  let day = date.getDate();
+  let month = date.getMonth() + 1; // Month bat dau tu 0
+  let year = date.getFullYear();
 
-  let hRotation = 30 * hh + mm / 2;
-  let mRotation = 6 * mm;
-  let sRotation = 6 * ss;
+  // Cac thu trong tuan
+  const weekdays = [
+    "Chủ Nhật",
+    "Thứ Hai",
+    "Thứ Ba",
+    "Thứ Tư",
+    "Thứ Năm",
+    "Thứ Sáu",
+    "Thứ Bảy",
+  ];
+  let weekday = weekdays[date.getDay()]; // Lay thu trong tuan
 
-  hr.style.transform = `rotate(${hRotation}deg)`;
-  min.style.transform = `rotate(${mRotation}deg)`;
-  sec.style.transform = `rotate(${sRotation}deg)`;
-
-  timeLabel.textContent = `${hh.toString().padStart(2, "0")}:${mm
+  let timeString = `${hh.toString().padStart(2, "0")}:${mm
     .toString()
     .padStart(2, "0")}:${ss.toString().padStart(2, "0")}`;
+  let dateString = `${day.toString().padStart(2, "0")}/${month
+    .toString()
+    .padStart(2, "0")}/${year}`;
+
+  document.getElementById(
+    "timeLabel"
+  ).textContent = `${timeString} - ${weekday} - ${dateString} `;
 }
+
 setInterval(displayTime, 1000);
+displayTime();
 
 function showPage(pageId) {
   // An tat ca noi dung
