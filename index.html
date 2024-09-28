@@ -13,29 +13,33 @@
     />
   </head>
   <body>
+    <section id="overlay"></section>
     <div id="wraper">
       <div id="header">
         <nav class="container">
-          <a href="" id="logo">
-            <img src="/img/logo1.png" alt="Internet of Things" />
-          </a>
-          <ul>
-            <ul id="main-menu">
-              <li class="navbar__link">
-                <a href="#" onclick="showPage('dashboard')">Dashboard</a>
-              </li>
-              <li class="navbar__link">
-                <a href="#" onclick="showPage('device')">Devices</a>
-              </li>
-              <li class="navbar__link">
-                <a href="#" onclick="showPage('temp')">Graph</a>
-              </li>
-              <li class="navbar__link">
-                <a href="#" onclick="showPage('but')">About</a>
-              </li>
-              <a href="#footer"><button class="navbar__btn">Contact</button></a>
-            </ul>
+          <div class="navbar__logo">
+            <a href="" id="logo">
+              <img src="/img/logo1.png" alt="Internet of Things" />
+            </a>
+          </div>
+          <ul class="navbar__links">
+            <li class="navbar__link">
+              <a href="#" onclick="showPage('dashboard')">Dashboard</a>
+            </li>
+            <li class="navbar__link">
+              <a href="#" onclick="showPage('device')">Devices</a>
+            </li>
+            <li class="navbar__link">
+              <a href="#" onclick="showPage('temp')">Graph</a>
+            </li>
+            <li class="navbar__link">
+              <a href="#" onclick="showPage('but')">About</a>
+            </li>
+            <a href="#footer"><button class="navbar__btn">Contact</button></a>
           </ul>
+          <div class="navbar__icons">
+            <div class="navbar__icon"></div>
+          </div>
         </nav>
       </div>
     </div>
@@ -43,23 +47,30 @@
       <div id="timeLabel"></div>
     </div>
     <div id="dashboard" class="content active">
-      <div class="tem">
-        <form>
-          <h1>Nhiệt độ cơ thể:</h1>
-          <h1 id="nhietdo"></h1>
-        </form>
-      </div>
-      <div class="heart">
-        <form>
-          <h1>Nhịp tim:</h1>
-          <h1 id="nhiptim"></h1>
-        </form>
-      </div>
-      <div class="humidity">
-        <form>
-          <h1>Độ ẩm:</h1>
-          <h1 id="doam"></h1>
-        </form>
+      <div class="container">
+        <div class="tem">
+          <form>
+            <p>Nhiệt độ cơ thể:</p>
+            <i class="fa-solid fa-temperature-three-quarters"></i>
+            <p id="nhietdo"></p>
+          </form>
+        </div>
+        <div class="heart">
+          <form>
+            <p>Nhịp tim:</p>
+            <i class="fa-solid fa-hand-holding-heart"></i>
+            <p id="nhiptim"></p>
+          </form>
+        </div>
+        <div class="humidity">
+          <form>
+            <p>Độ ẩm:</p>
+            <i class="fa-solid fa-droplet">
+              <i class="fa-solid fa-percent"></i>
+            </i>
+            <p id="doam"></p>
+          </form>
+        </div>
       </div>
     </div>
     <div id="device" class="content">
@@ -114,5 +125,9 @@
       dbRef3.on("value", (snap) => (doam.innerText = snap.val()));
     </script>
     <script src="./js/main.js"></script>
+    <script
+      src="https://kit.fontawesome.com/7a5bad5ced.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

@@ -42,3 +42,14 @@ function showPage(pageId) {
   // Hiện nội dung tương ứng
   document.getElementById(pageId).classList.add("active");
 }
+
+//menu
+const menu = document.querySelector(".navbar__links");
+const menuButton = document.querySelector(".navbar__icons");
+const overlay = document.querySelector("#overlay");
+
+menuButton.addEventListener("click", () => {
+  menu.classList.toggle("navbar__open");
+  menuButton.classList.toggle("open");
+  overlay.classList.toggle("show");
+});
