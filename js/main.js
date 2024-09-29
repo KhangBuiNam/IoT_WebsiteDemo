@@ -4,10 +4,10 @@ function displayTime() {
   let mm = date.getMinutes();
   let ss = date.getSeconds();
   let day = date.getDate();
-  let month = date.getMonth() + 1; // Month bat dau tu 0
+  let month = date.getMonth() + 1; // Tháng bắt đầu từ 0
   let year = date.getFullYear();
 
-  // Cac thu trong tuan
+  // Các thứ trong tuần
   const weekdays = [
     "Chủ Nhật",
     "Thứ Hai",
@@ -17,18 +17,17 @@ function displayTime() {
     "Thứ Sáu",
     "Thứ Bảy",
   ];
-  let weekday = weekdays[date.getDay()]; // Lay thu trong tuan
+  let weekday = weekdays[date.getDay()]; // Lấy thứ trong tuần
 
   let timeString = `${hh.toString().padStart(2, "0")}:${mm
     .toString()
     .padStart(2, "0")}:${ss.toString().padStart(2, "0")}`;
-  let dateString = `${day.toString().padStart(2, "0")}/${month
+  let dateString = `${weekday} - ${day.toString().padStart(2, "0")}/${month
     .toString()
     .padStart(2, "0")}/${year}`;
 
-  document.getElementById(
-    "timeLabel"
-  ).textContent = `${timeString} - ${weekday} - ${dateString} `;
+  document.getElementById("timeLabel").textContent = timeString;
+  document.getElementById("dateLabel").textContent = dateString;
 }
 
 setInterval(displayTime, 1000);
@@ -53,3 +52,30 @@ menuButton.addEventListener("click", () => {
   menuButton.classList.toggle("open");
   overlay.classList.toggle("show");
 });
+
+// Weather
+var main = document.querySelector("#name");
+var temp = document.querySelector(".temp");
+var desc = document.querySelector(".desc");
+
+// Hàm để lấy thông tin thời tiết
+const APP_ID = "29123485750d78a89be282224e74c41f";
+function getWeather() {
+  fetch(
+    `https://api.openweathermap.org/data/2.5/weather?lat=10.76&lon=106.66&appid=${APP_ID}&units=metric`
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      var tempValue = data["main"]["temp"];
+      var nameValue = data["name"];
+      var descValue = data["weather"][0]["description"];
+
+      main.innerHTML = nameValue;
+      desc.innerHTML = "Mô tả - " + descValue;
+      temp.innerHTML = "Nhiệt độ - " + tempValue + " °C";
+    })
+    .catch((err) => alert("Không thể lấy thông tin thời tiết!"));
+}
+
+// Get weather Ho Chi Minh City when open website
+getWeather();

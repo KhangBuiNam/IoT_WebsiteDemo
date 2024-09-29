@@ -43,12 +43,26 @@
         </nav>
       </div>
     </div>
-    <div class="timereal">
-      <div id="timeLabel"></div>
-    </div>
+
     <div id="dashboard" class="content active">
-      <div class="container">
-        <div class="tem">
+      <div class="banner">
+        <div class="timereal">
+          <div id="timeLabel"></div>
+          <div id="dateLabel"></div>
+        </div>
+        <div class="humidity">
+          <form>
+            <p>Độ ẩm không khí:</p>
+            <i class="fa-solid fa-droplet">
+              <i class="fa-solid fa-percent"></i>
+            </i>
+            <p id="doam"></p>
+          </form>
+        </div>
+      </div>
+
+      <div class="banner">
+        <div class="tem_person">
           <form>
             <p>Nhiệt độ cơ thể:</p>
             <i class="fa-solid fa-temperature-three-quarters"></i>
@@ -57,19 +71,34 @@
         </div>
         <div class="heart">
           <form>
-            <p>Nhịp tim:</p>
+            <p>Nhịp tim cơ thể:</p>
             <i class="fa-solid fa-hand-holding-heart"></i>
             <p id="nhiptim"></p>
           </form>
         </div>
-        <div class="humidity">
+      </div>
+      <div class="banner">
+        <div class="tempev">
           <form>
-            <p>Độ ẩm:</p>
-            <i class="fa-solid fa-droplet">
-              <i class="fa-solid fa-percent"></i>
-            </i>
-            <p id="doam"></p>
+            <p>Nhiệt độ môi trường:</p>
+            <i class="fa-solid fa-temperature-three-quarters"></i>
+            <p id="nhietdo2"></p>
           </form>
+        </div>
+        <div class="button_device">
+          <form>
+            <h1>Điều khiển thiết bị</h1>
+          </form>
+          <button>Light ON</button>
+          <button>Ligth OFF</button>
+        </div>
+      </div>
+      <div class="the_weather">
+        <h1>Thời Tiết Hồ Chí Minh</h1>
+        <div class="result">
+          <div id="name"></div>
+          <div class="desc"></div>
+          <div class="temp"></div>
         </div>
       </div>
     </div>
@@ -113,7 +142,7 @@
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
       var nhietdo = document.getElementById("nhietdo");
-      var dbRef = firebase.database().ref().child("Nhiet do");
+      var dbRef = firebase.database().ref().child("Nhiet do co the");
       dbRef.on("value", (snap) => (nhietdo.innerText = snap.val()));
 
       var nhiptim = document.getElementById("nhiptim");
@@ -123,6 +152,10 @@
       var doam = document.getElementById("doam");
       var dbRef3 = firebase.database().ref().child("Do am");
       dbRef3.on("value", (snap) => (doam.innerText = snap.val()));
+
+      var nhietdo2 = document.getElementById("nhietdo2");
+      var dbRef4 = firebase.database().ref().child("Nhiet do moi truong");
+      dbRef4.on("value", (snap) => (nhietdo2.innerText = snap.val()));
     </script>
     <script src="./js/main.js"></script>
     <script
