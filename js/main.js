@@ -4,10 +4,10 @@ function displayTime() {
   let mm = date.getMinutes();
   let ss = date.getSeconds();
   let day = date.getDate();
-  let month = date.getMonth() + 1; // Tháng bắt đầu từ 0
+  let month = date.getMonth() + 1; // Thang bat dau tu 0
   let year = date.getFullYear();
 
-  // Các thứ trong tuần
+  // Các thu trong tuan
   const weekdays = [
     "Chủ Nhật",
     "Thứ Hai",
@@ -17,7 +17,7 @@ function displayTime() {
     "Thứ Sáu",
     "Thứ Bảy",
   ];
-  let weekday = weekdays[date.getDay()]; // Lấy thứ trong tuần
+  let weekday = weekdays[date.getDay()]; // Lay thu trong tuan
 
   let timeString = `${hh.toString().padStart(2, "0")}:${mm
     .toString()
@@ -38,7 +38,7 @@ function showPage(pageId) {
   const contents = document.querySelectorAll(".content");
   contents.forEach((content) => content.classList.remove("active"));
 
-  // Hiện nội dung tương ứng
+  // Hien noi dung tuong ung
   document.getElementById(pageId).classList.add("active");
 }
 
@@ -58,7 +58,7 @@ var main = document.querySelector("#name");
 var temp = document.querySelector(".temp");
 var desc = document.querySelector(".desc");
 
-// Hàm để lấy thông tin thời tiết
+// Lấy api
 const APP_ID = "29123485750d78a89be282224e74c41f";
 function getWeather() {
   fetch(
@@ -79,3 +79,15 @@ function getWeather() {
 
 // Get weather Ho Chi Minh City when open website
 getWeather();
+
+function light(show) {
+  var pic;
+  if (show == 0) {
+    pic = "img/bulboff.gif";
+    firebase.database().ref("Light").set({ Off: 0 });
+  } else {
+    pic = "img/bulbon.gif";
+    firebase.database().ref("Light").set({ On: 1 });
+  }
+  document.getElementById("bulb").src = pic;
+}

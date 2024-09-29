@@ -77,7 +77,19 @@
           </form>
         </div>
       </div>
-      <div class="banner">
+      <div class="bot">
+        <div class="button_device">
+          <form>
+            <h2>Điều khiển thiết bị</h2>
+          </form>
+          <img id="bulb" src="img/bulboff.gif" alt="Light" />
+          <div class="but">
+            <button id="btn1" type="button" onclick="light(1)">Light ON</button>
+            <button id="btn2" type="button" onclick="light(0)">
+              Light OFF
+            </button>
+          </div>
+        </div>
         <div class="tempev">
           <form>
             <p>Nhiệt độ môi trường:</p>
@@ -85,20 +97,18 @@
             <p id="nhietdo2"></p>
           </form>
         </div>
-        <div class="button_device">
-          <form>
-            <h1>Điều khiển thiết bị</h1>
-          </form>
-          <button>Light ON</button>
-          <button>Ligth OFF</button>
-        </div>
-      </div>
-      <div class="the_weather">
-        <h1>Thời Tiết Hồ Chí Minh</h1>
-        <div class="result">
-          <div id="name"></div>
-          <div class="desc"></div>
-          <div class="temp"></div>
+        <div class="the_weather">
+          <h2>Thời Tiết Hồ Chí Minh</h2>
+          <img
+            src="http://openweathermap.org/img/wn/10d@2x.png"
+            alt="weather icon"
+            class="weather-icon"
+          />
+          <div class="result">
+            <div id="name"></div>
+            <div class="desc"></div>
+            <div class="temp"></div>
+          </div>
         </div>
       </div>
     </div>
