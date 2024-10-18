@@ -30,7 +30,7 @@
               <a href="#" onclick="showPage('device')">Devices</a>
             </li>
             <li class="navbar__link">
-              <a href="#" onclick="showPage('temp')">Graph</a>
+              <a href="#" onclick="showPage('graph')">Graph</a>
             </li>
             <li class="navbar__link">
               <a href="#" onclick="showPage('but')">About</a>
@@ -115,8 +115,19 @@
     <div id="device" class="content">
       <p>weather day ne</p>
     </div>
-    <div id="temp" class="content">
-      <p>Nhiet do co the</p>
+    <div id="graph" class="content">
+    <div id="temp__thingspeak">
+      <h2>Nhiet do moi truong</h2>
+      <iframe width="450" height="260" style="border: 1px solid #a1a1a1;" src="https://thingspeak.com/channels/2700213/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+    </div>
+    <div id="hum__thingspeak">
+      <h2>Do am</h2>
+      <iframe width="450" height="260" style="border: 1px solid #a1a1a1;" src="https://thingspeak.com/channels/2700213/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+    </div>
+    <div id="Heart__rate">
+      <h2>Nhip tim</h2>
+      <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2700213/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+    </div>
     </div>
     <div id="but" class="content">
       <p>Nut bam</p>
@@ -160,11 +171,11 @@
       dbRef2.on("value", (snap) => (nhiptim.innerText = snap.val()));
 
       var doam = document.getElementById("doam");
-      var dbRef3 = firebase.database().ref().child("Do am");
+      var dbRef3 = firebase.database().ref().child("Humidity");
       dbRef3.on("value", (snap) => (doam.innerText = snap.val()));
 
       var nhietdo2 = document.getElementById("nhietdo2");
-      var dbRef4 = firebase.database().ref().child("Nhiet do moi truong");
+      var dbRef4 = firebase.database().ref().child("Temperature");
       dbRef4.on("value", (snap) => (nhietdo2.innerText = snap.val()));
     </script>
     <script src="./js/main.js"></script>

@@ -346,3 +346,40 @@ button :hover {
   height: 120px;
   margin: 20px;
 }
+
+#graph{
+  margin: 20px;
+  padding: 20px;
+  border: none;
+  position: fixed;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#temp__thingspeak{
+  margin: 20px;
+  text-align: center;
+  color: #f8f8f8;
+  font-weight: bold;
+
+  
+}
+
+#hum__thingspeak{
+  margin: 20px;
+  text-align: center;
+  color: #f8f8f8;
+  font-weight: bold;
+ 
+}
+
+#Heart__rate{
+  margin: 20px;
+  text-align: center;
+  color: #f8f8f8;
+  font-weight: bold;
+ 
+}
