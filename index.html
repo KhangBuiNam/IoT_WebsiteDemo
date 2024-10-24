@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smartwearable</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section id="overlay"></section>
+    <div id="wraper">
+      <div id="header">
+        <nav class="container">
+          <div class="navbar__logo">
+            <a href="" id="logo">
+              <img src="/img/logo1.png" alt="Internet of Things" />
+            </a>
+          </div>
+          <ul class="navbar__links">
+            <li class="navbar__link">
+              <a href="#" onclick="showPage('dashboard')">Dashboard</a>
+            </li>
+            <li class="navbar__link">
+              <a href="#" onclick="showPage('device')">Devices</a>
+            </li>
+            <li class="navbar__link">
+              <a href="#" onclick="showPage('graph')">Graph</a>
+            </li>
+            <li class="navbar__link">
+              <a href="#" onclick="showPage('but')">About</a>
+            </li>
+            <a href="#footer"><button class="navbar__btn">Contact</button></a>
+          </ul>
+          <div class="navbar__icons">
+            <div class="navbar__icon"></div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <div id="dashboard" class="content active">
+      <div class="banner">
+        <div class="timereal">
+          <div id="timeLabel"></div>
+          <div id="dateLabel"></div>
+        </div>
+        <div class="humidity">
+          <form>
+            <p>Độ ẩm không khí:</p>
+            <i class="fa-solid fa-droplet">
+              <i class="fa-solid fa-percent"></i>
+            </i>
+            <p id="doam"></p>
+          </form>
+        </div>
+      </div>
+
+      <div class="banner">
+        <div class="tem_person">
+          <form>
+            <p>Nồng độ oxy trong máu:</p>
+            <i class="fa-solid fa-temperature-three-quarters"></i>
+            <p id="nhietdo"></p>
+          </form>
+        </div>
+        <div class="heart">
+          <form>
+            <p>Nhịp tim cơ thể:</p>
+            <i class="fa-solid fa-hand-holding-heart"></i>
+            <p id="nhiptim"></p>
+          </form>
+        </div>
+      </div>
+      <div class="bot">
+        <div class="button_device">
+          <form>
+            <h2>Điều khiển thiết bị</h2>
+          </form>
+          <img id="bulb" src="img/bulboff.gif" alt="Light" />
+          <div class="but">
+            <button id="btn1" type="button" onclick="light(1)">Light ON</button>
+            <button id="btn2" type="button" onclick="light(0)">
+              Light OFF
+            </button>
+          </div>
+        </div>
+        <div class="tempev">
+          <form>
+            <p>Nhiệt độ môi trường:</p>
+            <i class="fa-solid fa-temperature-three-quarters"></i>
+            <p id="nhietdo2"></p>
+          </form>
+        </div>
+        <div class="the_weather">
+          <h2>Thời Tiết Hồ Chí Minh</h2>
+          <img
+            src="http://openweathermap.org/img/wn/10d@2x.png"
+            alt="weather icon"
+            class="weather-icon"
+          />
+          <div class="result">
+            <div id="name"></div>
+            <div class="desc"></div>
+            <div class="temp"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="device" class="content">
+      <p>weather day ne</p>
+    </div>
+    <div id="graph" class="content">
+      <div class="banner">
+        <div id="temp__thingspeak">
+          <h2>Nhiet do moi truong</h2>
+          <iframe
+            width="450"
+            height="260"
+            style="border: 1px solid #a1a1a1"
+            src="https://thingspeak.com/channels/2700213/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"
+          ></iframe>
+        </div>
+        <div id="hum__thingspeak">
+          <h2>Do am</h2>
+          <iframe
+            width="450"
+            height="260"
+            style="border: 1px solid #a1a1a1"
+            src="https://thingspeak.com/channels/2700213/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"
+          ></iframe>
+        </div>
+        <div id="Heart__rate">
+          <h2>Nhip tim</h2>
+          <iframe
+            width="450"
+            height="260"
+            style="border: 1px solid #cccccc"
+            src="https://thingspeak.com/channels/2700213/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+    <div id="but" class="content">
+      <p>Nut bam</p>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+    <!-- lien ket voi functions.js -->
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyDgNVgmp_by1ElotbugnN1JqEsevId5otk",
+        authDomain: "iot-webdemo.firebaseapp.com",
+        databaseURL: "https://iot-webdemo-default-rtdb.firebaseio.com",
+        projectId: "iot-webdemo",
+        storageBucket: "iot-webdemo.appspot.com",
+        messagingSenderId: "767860821",
+        appId: "1:767860821:web:25242520e7430a7b03b4dc",
+        measurementId: "G-6ZF4R0B43D",
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+      var nhietdo = document.getElementById("nhietdo");
+      var dbRef = firebase.database().ref().child("SpO2");
+      dbRef.on("value", (snap) => (nhietdo.innerText = snap.val()));
+
+      var nhiptim = document.getElementById("nhiptim");
+      var dbRef2 = firebase.database().ref().child("HeartRate");
+      dbRef2.on("value", (snap) => (nhiptim.innerText = snap.val()));
+
+      var doam = document.getElementById("doam");
+      var dbRef3 = firebase.database().ref().child("humidity");
+      dbRef3.on("value", (snap) => (doam.innerText = snap.val()));
+
+      var nhietdo2 = document.getElementById("nhietdo2");
+      var dbRef4 = firebase.database().ref().child("temperature");
+      dbRef4.on("value", (snap) => (nhietdo2.innerText = snap.val()));
+    </script>
+    <script src="./js/main.js"></script>
+    <script
+      src="https://kit.fontawesome.com/7a5bad5ced.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
