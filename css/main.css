@@ -347,16 +347,11 @@ button :hover {
   margin: 20px;
 }
 
-<<<<<<< HEAD
 #graph {
-=======
-#graph{
->>>>>>> 6f594106b82f818cee7f792e70eab92fac8ba359
   margin: 20px;
   padding: 20px;
   border: none;
   position: fixed;
-<<<<<<< HEAD
   border-radius: 20px;
   text-align: center;
   align-items: center;
@@ -364,55 +359,25 @@ button :hover {
 }
 
 #temp__thingspeak {
-=======
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-
-}
-
-#temp__thingspeak{
->>>>>>> 6f594106b82f818cee7f792e70eab92fac8ba359
   margin: 20px;
   text-align: center;
   color: #f8f8f8;
   font-weight: bold;
-<<<<<<< HEAD
   border-radius: 20px;
 }
 
 #hum__thingspeak {
-=======
-
-  
-}
-
-#hum__thingspeak{
->>>>>>> 6f594106b82f818cee7f792e70eab92fac8ba359
   margin: 20px;
   text-align: center;
   color: #f8f8f8;
   font-weight: bold;
-<<<<<<< HEAD
   border-radius: 20px;
 }
 
 #Heart__rate {
-=======
- 
-}
-
-#Heart__rate{
->>>>>>> 6f594106b82f818cee7f792e70eab92fac8ba359
   margin: 20px;
   text-align: center;
   color: #f8f8f8;
   font-weight: bold;
-<<<<<<< HEAD
   border-radius: 20px;
 }
-=======
- 
-}
->>>>>>> 6f594106b82f818cee7f792e70eab92fac8ba359

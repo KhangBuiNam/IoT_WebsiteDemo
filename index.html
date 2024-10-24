@@ -64,11 +64,7 @@
       <div class="banner">
         <div class="tem_person">
           <form>
-            <<<<<<< HEAD
             <p>Nồng độ oxy trong máu:</p>
-            =======
-            <p>Nhiệt độ cơ thể:</p>
-            >>>>>>> 6f594106b82f818cee7f792e70eab92fac8ba359
             <i class="fa-solid fa-temperature-three-quarters"></i>
             <p id="nhietdo"></p>
           </form>
@@ -161,59 +157,43 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
     <!-- lien ket voi functions.js -->
     <script type="module">
-            // Import the functions you need from the SDKs you need
-            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
-            import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-analytics.js";
-            // TODO: Add SDKs for Firebase products that you want to use
-            // https://firebase.google.com/docs/web/setup#available-libraries
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
 
-            // Your web app's Firebase configuration
-            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-            const firebaseConfig = {
-              apiKey: "AIzaSyDgNVgmp_by1ElotbugnN1JqEsevId5otk",
-              authDomain: "iot-webdemo.firebaseapp.com",
-              databaseURL: "https://iot-webdemo-default-rtdb.firebaseio.com",
-              projectId: "iot-webdemo",
-              storageBucket: "iot-webdemo.appspot.com",
-              messagingSenderId: "767860821",
-              appId: "1:767860821:web:25242520e7430a7b03b4dc",
-              measurementId: "G-6ZF4R0B43D",
-            };
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyDgNVgmp_by1ElotbugnN1JqEsevId5otk",
+        authDomain: "iot-webdemo.firebaseapp.com",
+        databaseURL: "https://iot-webdemo-default-rtdb.firebaseio.com",
+        projectId: "iot-webdemo",
+        storageBucket: "iot-webdemo.appspot.com",
+        messagingSenderId: "767860821",
+        appId: "1:767860821:web:25242520e7430a7b03b4dc",
+        measurementId: "G-6ZF4R0B43D",
+      };
 
-            // Initialize Firebase
-            firebase.initializeApp(firebaseConfig);
-            firebase.analytics();
-            var nhietdo = document.getElementById("nhietdo");
-      <<<<<<< HEAD
-            var dbRef = firebase.database().ref().child("SpO2");
-            dbRef.on("value", (snap) => (nhietdo.innerText = snap.val()));
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+      var nhietdo = document.getElementById("nhietdo");
+      var dbRef = firebase.database().ref().child("SpO2");
+      dbRef.on("value", (snap) => (nhietdo.innerText = snap.val()));
 
-            var nhiptim = document.getElementById("nhiptim");
-            var dbRef2 = firebase.database().ref().child("HeartRate");
-            dbRef2.on("value", (snap) => (nhiptim.innerText = snap.val()));
+      var nhiptim = document.getElementById("nhiptim");
+      var dbRef2 = firebase.database().ref().child("HeartRate");
+      dbRef2.on("value", (snap) => (nhiptim.innerText = snap.val()));
 
-            var doam = document.getElementById("doam");
-            var dbRef3 = firebase.database().ref().child("humidity");
-            dbRef3.on("value", (snap) => (doam.innerText = snap.val()));
+      var doam = document.getElementById("doam");
+      var dbRef3 = firebase.database().ref().child("humidity");
+      dbRef3.on("value", (snap) => (doam.innerText = snap.val()));
 
-            var nhietdo2 = document.getElementById("nhietdo2");
-            var dbRef4 = firebase.database().ref().child("temperature");
-      =======
-            var dbRef = firebase.database().ref().child("Nhiet do co the");
-            dbRef.on("value", (snap) => (nhietdo.innerText = snap.val()));
-
-            var nhiptim = document.getElementById("nhiptim");
-            var dbRef2 = firebase.database().ref().child("Nhip tim");
-            dbRef2.on("value", (snap) => (nhiptim.innerText = snap.val()));
-
-            var doam = document.getElementById("doam");
-            var dbRef3 = firebase.database().ref().child("Humidity");
-            dbRef3.on("value", (snap) => (doam.innerText = snap.val()));
-
-            var nhietdo2 = document.getElementById("nhietdo2");
-            var dbRef4 = firebase.database().ref().child("Temperature");
-      >>>>>>> 6f594106b82f818cee7f792e70eab92fac8ba359
-            dbRef4.on("value", (snap) => (nhietdo2.innerText = snap.val()));
+      var nhietdo2 = document.getElementById("nhietdo2");
+      var dbRef4 = firebase.database().ref().child("temperature");
+      dbRef4.on("value", (snap) => (nhietdo2.innerText = snap.val()));
     </script>
     <script src="./js/main.js"></script>
     <script
