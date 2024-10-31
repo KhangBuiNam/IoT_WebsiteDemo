@@ -84,8 +84,10 @@
           </form>
           <img id="bulb" src="img/bulboff.gif" alt="Light" />
           <div class="but">
-            <button id="btn1" type="button" onclick="light(1)">Light ON</button>
-            <button id="btn2" type="button" onclick="light(0)">
+            <button id="btn1" type="button" onclick="led(true)">
+              Light ON
+            </button>
+            <button id="btn2" type="button" onclick="led(false)">
               Light OFF
             </button>
           </div>
@@ -180,11 +182,11 @@
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
       var nhietdo = document.getElementById("nhietdo");
-      var dbRef = firebase.database().ref().child("SpO2");
+      var dbRef = firebase.database().ref().child("spo2");
       dbRef.on("value", (snap) => (nhietdo.innerText = snap.val()));
 
       var nhiptim = document.getElementById("nhiptim");
-      var dbRef2 = firebase.database().ref().child("HeartRate");
+      var dbRef2 = firebase.database().ref().child("heartRate");
       dbRef2.on("value", (snap) => (nhiptim.innerText = snap.val()));
 
       var doam = document.getElementById("doam");

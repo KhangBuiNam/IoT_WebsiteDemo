@@ -80,14 +80,14 @@ function getWeather() {
 // Get weather Ho Chi Minh City when open website
 getWeather();
 
-function light(show) {
+function led(show) {
   var pic;
   if (show == 0) {
     pic = "img/bulboff.gif";
-    firebase.database().ref("Light").set({ Off: 0 });
+    firebase.database().ref("led").set({ ledState: false });
   } else {
     pic = "img/bulbon.gif";
-    firebase.database().ref("Light").set({ On: 1 });
+    firebase.database().ref("led").set({ ledState: true });
   }
   document.getElementById("bulb").src = pic;
 }
