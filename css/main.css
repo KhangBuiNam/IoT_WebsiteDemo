@@ -33,10 +33,56 @@ html {
   --accent-color: #0071ff;
 }
 
+button .dark {
+  border: none;
+  padding: 0.8em 2em;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 4px;
+  font: inherit;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+}
+p,
+h1,
+h2,
+h3 {
+  margin: 10px 0 20px 0;
+  color: var(--secondary-text);
+}
+
+#theme-switch {
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--base-variant);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 20px;
+  right: 20px;
+}
+#theme-switch svg {
+  fill: var(--primary-color);
+}
+#theme-switch svg:last-child {
+  display: none;
+}
+.darkmode #theme-switch svg:first-child {
+  display: none;
+}
+.darkmode #theme-switch svg:last-child {
+  display: block;
+}
+
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #194838;
-  background-image: url(/img/background1.gif);
+  min-height: 100vh;
+  background-color: var(--base-color);
+  color: var(--text-color);
+  /* background-image: url(/img/background1.gif); */
 }
 
 #overlay {
@@ -66,6 +112,7 @@ body {
 }
 
 nav {
+  color: var(--secondary-text);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -239,7 +286,7 @@ button:hover {
 
 .timereal {
   background-color: rgba(98, 119, 85, 0.5);
-  color: #f8f8f8;
+  color: var(--secondary-text);
   text-align: center;
   border: 3px solid var(--green);
   border-radius: 20px;
@@ -253,17 +300,17 @@ button:hover {
   font-weight: 900;
   margin-top: 20px;
   font-size: 24px;
-  color: #f8f8f8;
+  color: var(--secondary-text);
 }
 
 #dateLabel {
   margin-top: 20px;
   font-size: 24px;
-  color: #f8f8f8;
+  color: var(--secondary-text);
 }
 
 .humidity {
-  color: #f8f8f8;
+  color: var(--secondary-text);
   background-color: rgba(98, 119, 85, 0.5);
   background-image: url(/img/humidity1.png), url(/img/humidity2.png);
   background-repeat: no-repeat;
@@ -281,7 +328,7 @@ button:hover {
   margin: 10px;
   flex: 1;
   background-image: url(/img/spo2.png), url(/img/spo22.png);
-  color: #f8f8f8;
+  color: var(--secondary-text);
   font-weight: bold;
   border-radius: 20px;
   text-align: center;
@@ -321,7 +368,7 @@ button:hover {
   padding: 20px;
   border-radius: 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  color: #f8f8f8;
+  color: var(--secondary-text);
   text-align: center;
   flex: 1;
   height: 280px;
@@ -331,7 +378,7 @@ button:hover {
   border: 3px solid var(--green);
   margin: 10px;
   flex: 1;
-  color: #f8f8f8;
+  color: var(--secondary-text);
   font-weight: bold;
   border-radius: 20px;
   text-align: center;
@@ -343,7 +390,7 @@ button:hover {
 
 .button_device {
   grid-row: span 2;
-  color: #f8f8f8;
+  color: var(--secondary-text);
   border: 3px solid var(--green);
   margin: 10px;
   padding: 10px;
@@ -367,7 +414,7 @@ button:hover {
 }
 
 .board {
-  color: #f8f8f8;
+  color: var(--secondary-text);
   display: contents;
   overflow: hidden;
   position: relative;
@@ -395,7 +442,7 @@ button:hover {
 #temp__thingspeak {
   margin: 20px;
   text-align: center;
-  color: #f8f8f8;
+  color: var(--secondary-text);
   font-weight: bold;
   border-radius: 20px;
 }
@@ -403,7 +450,7 @@ button:hover {
 #hum__thingspeak {
   margin: 20px;
   text-align: center;
-  color: #f8f8f8;
+  color: var(--secondary-text);
   font-weight: bold;
   border-radius: 20px;
 }
@@ -411,13 +458,13 @@ button:hover {
 #Heart__rate {
   margin: 20px;
   text-align: center;
-  color: #f8f8f8;
+  color: var(--secondary-text);
   font-weight: bold;
   border-radius: 20px;
 }
 
 .About {
-  color: #f8f8f8;
+  color: var(--secondary-text);
   object-fit: cover;
 }
 .About img {
