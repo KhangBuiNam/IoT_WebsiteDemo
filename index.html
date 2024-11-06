@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Smartwearable</title>
     <link rel="stylesheet" href="css/main.css" />
+    <script type="text/darkmode" src="darkmode.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -121,17 +122,19 @@
 <div class="container">
     <div class="board">
           <h2>ESP32 - Screen:</h2>
-          <p>Là vi điều khiển kiêm mô-đun Wi-Fi, ESP32 được dùng để thu thập dữ liệu từ các cảm biến và truyền dữ liệu này qua mạng Wi-Fi lên một server đám mây (Firebase).
+          <p>Bộ vi điều khiển này có tích hợp Wi-Fi và Bluetooth, là lựa chọn lý tưởng để thu thập và truyền dữ liệu thời gian thực từ cảm biến đến thiết bị khác, ESP32 được dùng để thu thập dữ liệu từ các cảm biến và truyền dữ liệu này qua mạng Wi-Fi lên một server đám mây (Firebase).
           </p>
           <img src="devices/ESP32.png" alt="ESP32">
-    
+          <img src="devices/esp32_screen.jpg" alt="EScreen">
           <h2>Cảm biến (sensor):</h2>
           <h3>DHT11</h3>
           <img src="devices/DHT11.webp" alt="DHT11">
-          <p>Cảm biến DHT11 được sử dụng để đo nhiệt độ và độ ẩm môi trường xung quanh.</p>
+          <p>Cảm biến DHT11 được sử dụng để đo nhiệt độ và độ ẩm môi trường xung quanh. Đây là một cảm biến phổ biến, giá rẻ, có khả năng đo nhiệt độ và độ ẩm. Nó sẽ gửi dữ liệu nhiệt độ mỗi vài giây và có thể kết hợp với ESP32 để truyền dữ liệu liên tục theo thời gian thực.
+          </p>
           <h3>MAX30102 và Spo2</h3>
           <img src="devices/MAX30102.webp" alt="MAX30102">
-          <p>MAX30102 là cảm biến quang học được dùng để đo nhịp tim và nồng độ oxy trong máu (SpO2).
+          <p>MAX30102 là cảm biến quang học được dùng để đo nhịp tim và nồng độ oxy trong máu (SpO2). Đây là cảm biến quang học được thiết kế để đo nhịp tim và nồng độ oxy trong máu, sử dụng công nghệ photoplethysmography (PPG) cho phép đo nhịp tim và nồng độ oxy trong máu một cách chính xác và liên tục, kết hợp cả cảm biến đo nhịp tim và đo nồng độ oxy trong máu trong cùng một mudule giúp giảm thiểu kích thước và đơn giản mạch, độ chính xác cao, giá thành tương đối thấp.
+
           </p>
     </div>
 </div>
@@ -170,11 +173,18 @@
     <div id="about" class="content">
       <div class="container">
         <div class="About">
+          <h2>Đặt vấn đề:</h2>
           <h3>Trong thời đại 4.0, thời đại số hóa, không dừng lại ở mục tiêu phấn đấu cho sự nghiệp, mà sức khỏe chính là một trong những vấn đề quan trọng cần phải được đầu tư kỹ lưỡng. Nhưng theo như xu hướng của giới trẻ thời đại 4.0 về việc chăm sóc sức khỏe lại không được chú trọng, nhất là môi trường sống, nơi ở của chính chúng ta lại không được đầu tư cho việc giám sát hay có những thay đổi khách quan về vấn đề chăm sóc sức khỏe này.</h3>
+         <img src="devices/Health_IoT.jpg" alt="">
           <h3>Nhận thấy vấn đề trên, nhóm chúng em đã chọn nghiên cứu và triển khai một đề tài liên quan đến giám sát sức khỏe bằng cách sử dụng và thiết kế một hệ thống IoT giám sát nhiệt độ phòng và đo nhịp tim của người sử dụng với mục đích trên nhằm đảm bảo và theo dõi chặt chẽ góp một phần vào việc nâng cao sức khỏe một cách tiện lợi và hợp lí nhất, từ đó người dùng có thể theo dõi, tinh chỉnh được các thông số nhiệt độ, độ ẩm căn phòng nơi mình ở một cách hợp lí cũng như là theo dõi biểu đồ đo nhịp tim để có thể hiểu được thể trạng cơ thể họ giúp cho ổn định về mặc sức khỏe một cách tiện lợi.
           </h3>
           <h3>Đề tài này không chỉ dừng ở việc theo dõi, giám sát sức khỏe của người dùng mà còn góp phần vào việc xây dựng các giải pháp thông minh khác như dự án nhà thông minh, đô thị thông minh, y tế thông minh, …
           </h3>
+          <img src="devices/Smart_wearable.jpg" alt="smart_wearable">
+          <h3>Trong dự án của chúng em đang nghiên cứu về Smart Wearable Devices trong giám sát Sức khỏe của người dùng:</h3>
+          <h3>Trong bối cảnh công nghệ ngày càng phát triển, các thiết bị đeo thông minh (smart wearable devices) đã trở thành công cụ quan trọng trong việc giám sát sức khỏe cá nhân. Những thiết bị này không chỉ cung cấp khả năng theo dõi sức khỏe liên tục mà còn cho phép người dùng nhận dữ liệu trong thời gian thực về các chỉ số như nhịp tim, mức độ hoạt động thể chất và chất lượng giấc ngủ, nhiệt độ,… Thông qua việc cảnh báo sớm các dấu hiệu bất thường, thiết bị giúp người dùng có thể can thiệp kịp thời, giảm nguy cơ mắc các bệnh lý nghiêm trọng.</h3>
+          <h3>Hơn nữa, việc tích hợp dữ liệu từ các thiết bị này vào hệ thống y tế cho phép các bác sĩ có cái nhìn tổng quát hơn về tình trạng sức khỏe của bệnh nhân, từ đó đưa ra các quyết định điều trị chính xác hơn. Các thiết bị cũng khuyến khích lối sống lành mạnh, giúp người dùng duy trì thói quen tập luyện và ăn uống hợp lý. Với nhiều lợi ích vượt trội như vậy, smart wearable devices không chỉ đơn thuần là công cụ hỗ trợ sức khỏe mà còn góp phần đáng kể vào việc cải thiện chất lượng cuộc sống của con người.</h3>
+       
         </div>
       </div>
     </div>

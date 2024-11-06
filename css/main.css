@@ -14,11 +14,28 @@ html {
   --green-h: #086848;
   --gray: #3f3d56;
   --smooth: all 0.3s ease-in;
+  --darkstyle: #212121;
+  /* Add color by Darkmode */
+  --base-color: white;
+  --base-variant: #e8e9ed;
+  --text-color: #111528;
+  --secondary-text: #232738;
+  --primary-color: #3a435d;
+  --accent-color: #0071ff;
+}
+
+.darkmode {
+  --base-color: #070b1d;
+  --base-variant: #101425;
+  --text-color: #ffffff;
+  --secondary-text: #a4a5b8;
+  --primary-color: #3a435d;
+  --accent-color: #0071ff;
 }
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #212121;
+  background-color: #194838;
   background-image: url(/img/background1.gif);
 }
 
@@ -360,6 +377,9 @@ button:hover {
   background-size: contain;
   object-fit: cover;
   position: relative;
+  width: 100%;
+  height: 100%;
+  align-items: center;
 }
 #graph {
   margin: 20px;
@@ -398,4 +418,10 @@ button:hover {
 
 .About {
   color: #f8f8f8;
+  object-fit: cover;
+}
+.About img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
