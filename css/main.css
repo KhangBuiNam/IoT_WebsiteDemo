@@ -28,7 +28,7 @@ html {
   --base-color: #070b1d;
   --base-variant: #101425;
   --text-color: #ffffff;
-  --secondary-text: #a4a5b8;
+  --secondary-text: #fbfbfb;
   --primary-color: #3a435d;
   --accent-color: #0071ff;
 }
@@ -101,7 +101,8 @@ body {
 }
 
 #header {
-  background-color: #130211;
+  background-color: #1e131d;
+  border-radius: 10px;
 }
 
 .container {
@@ -321,9 +322,10 @@ button:hover {
   border-radius: 20px;
   text-align: center;
   flex: 1;
+  font-weight: bold;
 }
 
-.tem_person {
+.spo2 {
   border: 3px solid var(--green);
   background-color: rgba(98, 119, 85, 0.5);
   margin: 10px;
@@ -342,6 +344,7 @@ button:hover {
   color: #f8f8f8;
   background-color: rgba(98, 119, 85, 0.5);
   flex: 1;
+  font-weight: bold;
   border: 3px solid var(--green);
   margin: 10px;
   border-radius: 20px;
@@ -475,4 +478,14 @@ button:hover {
   object-fit: cover;
   width: 100%;
   height: 100%;
+}
+
+.info {
+  color: var(--secondary-text);
+}
+
+.source img {
+  object-fit: cover;
+  width: 20px;
+  height: 20px;
 }
