@@ -117,7 +117,7 @@ button {
   transition: var(--smooth);
 }
 
-button :hover {
+button:hover {
   background-color: var(--green-l);
   transition: var(--smooth);
 }
@@ -214,7 +214,7 @@ button :hover {
 }
 
 .banner {
-  display:flex;
+  display: flex;
   justify-content: space-between;
   text-align: center;
   justify-items: center;
@@ -230,7 +230,6 @@ button :hover {
   margin: 10px;
   align-items: center;
   justify-content: space-between;
-  
 }
 
 #timeLabel {
@@ -350,6 +349,18 @@ button :hover {
   margin: 20px;
 }
 
+.board {
+  color: #f8f8f8;
+  display: contents;
+  overflow: hidden;
+  position: relative;
+}
+.board img {
+  display: flex;
+  background-size: contain;
+  object-fit: cover;
+  position: relative;
+}
 #graph {
   margin: 20px;
   padding: 20px;
@@ -383,4 +394,8 @@ button :hover {
   color: #f8f8f8;
   font-weight: bold;
   border-radius: 20px;
+}
+
+.About {
+  color: #f8f8f8;
 }

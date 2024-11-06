@@ -81,7 +81,7 @@ function getWeather() {
 getWeather();
 
 function led(show) {
-  var pic;
+  let pic;
   if (show == 0) {
     pic = "img/bulboff.gif";
     firebase.database().ref("led").set({ ledState: false });
@@ -89,5 +89,24 @@ function led(show) {
     pic = "img/bulbon.gif";
     firebase.database().ref("led").set({ ledState: true });
   }
+
+  // Update the image source immediately
   document.getElementById("bulb").src = pic;
+
+  // Optionally, update based on the database state
+  // firebase
+  //   .database()
+  //   .ref("led/ledState")
+  //   .once("value")
+  //   .then((snapshot) => {
+  //     const ledState = snapshot.val();
+  //     if (ledState) {
+  //       document.getElementById("bulb").src = "img/bulbon.gif";
+  //     } else {
+  //       document.getElementById("bulb").src = "img/bulboff.gif";
+  //     }
+  //   })
+  //   .catch((error) => {
+  //     console.error("Error fetching LED state:", error);
+  //   });
 }

@@ -33,7 +33,7 @@
               <a href="#" onclick="showPage('graph')">Graph</a>
             </li>
             <li class="navbar__link">
-              <a href="#" onclick="showPage('but')">About</a>
+              <a href="#" onclick="showPage('about')">About</a>
             </li>
             <a href="#footer"><button class="navbar__btn">Contact</button></a>
           </ul>
@@ -118,7 +118,23 @@
       </div>
     </div>
     <div id="device" class="content">
-      <p>weather day ne</p>
+<div class="container">
+    <div class="board">
+          <h2>ESP32 - Screen:</h2>
+          <p>Là vi điều khiển kiêm mô-đun Wi-Fi, ESP32 được dùng để thu thập dữ liệu từ các cảm biến và truyền dữ liệu này qua mạng Wi-Fi lên một server đám mây (Firebase).
+          </p>
+          <img src="devices/ESP32.png" alt="ESP32">
+    
+          <h2>Cảm biến (sensor):</h2>
+          <h3>DHT11</h3>
+          <img src="devices/DHT11.webp" alt="DHT11">
+          <p>Cảm biến DHT11 được sử dụng để đo nhiệt độ và độ ẩm môi trường xung quanh.</p>
+          <h3>MAX30102 và Spo2</h3>
+          <img src="devices/MAX30102.webp" alt="MAX30102">
+          <p>MAX30102 là cảm biến quang học được dùng để đo nhịp tim và nồng độ oxy trong máu (SpO2).
+          </p>
+    </div>
+</div>
     </div>
     <div id="graph" class="content">
       <div class="banner">
@@ -151,8 +167,16 @@
         </div>
       </div>
     </div>
-    <div id="but" class="content">
-      <p>Nut bam</p>
+    <div id="about" class="content">
+      <div class="container">
+        <div class="About">
+          <h3>Trong thời đại 4.0, thời đại số hóa, không dừng lại ở mục tiêu phấn đấu cho sự nghiệp, mà sức khỏe chính là một trong những vấn đề quan trọng cần phải được đầu tư kỹ lưỡng. Nhưng theo như xu hướng của giới trẻ thời đại 4.0 về việc chăm sóc sức khỏe lại không được chú trọng, nhất là môi trường sống, nơi ở của chính chúng ta lại không được đầu tư cho việc giám sát hay có những thay đổi khách quan về vấn đề chăm sóc sức khỏe này.</h3>
+          <h3>Nhận thấy vấn đề trên, nhóm chúng em đã chọn nghiên cứu và triển khai một đề tài liên quan đến giám sát sức khỏe bằng cách sử dụng và thiết kế một hệ thống IoT giám sát nhiệt độ phòng và đo nhịp tim của người sử dụng với mục đích trên nhằm đảm bảo và theo dõi chặt chẽ góp một phần vào việc nâng cao sức khỏe một cách tiện lợi và hợp lí nhất, từ đó người dùng có thể theo dõi, tinh chỉnh được các thông số nhiệt độ, độ ẩm căn phòng nơi mình ở một cách hợp lí cũng như là theo dõi biểu đồ đo nhịp tim để có thể hiểu được thể trạng cơ thể họ giúp cho ổn định về mặc sức khỏe một cách tiện lợi.
+          </h3>
+          <h3>Đề tài này không chỉ dừng ở việc theo dõi, giám sát sức khỏe của người dùng mà còn góp phần vào việc xây dựng các giải pháp thông minh khác như dự án nhà thông minh, đô thị thông minh, y tế thông minh, …
+          </h3>
+        </div>
+      </div>
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
