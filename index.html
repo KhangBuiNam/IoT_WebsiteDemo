@@ -186,7 +186,7 @@
       dbRef.on("value", (snap) => (nhietdo.innerText = snap.val()));
 
       var nhiptim = document.getElementById("nhiptim");
-      var dbRef2 = firebase.database().ref().child("heartRate");
+      var dbRef2 = firebase.database().ref().child("Nhip tim");
       dbRef2.on("value", (snap) => (nhiptim.innerText = snap.val()));
 
       var doam = document.getElementById("doam");
