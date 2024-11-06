@@ -435,15 +435,27 @@ button:hover {
   height: 100%;
   align-items: center;
 }
-#graph {
-  margin: 20px;
-  padding: 20px;
-  border: none;
-  position: fixed;
-  border-radius: 20px;
+#graph iframe {
+  position: relative;
   text-align: center;
   align-items: center;
   justify-content: center;
+}
+
+.chart {
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  flex-direction: row;
+}
+.chart iframe {
+  width: 450px;
+  height: 260px;
+  border: 1px solid #cccccc;
 }
 
 #temp__thingspeak {
@@ -470,6 +482,14 @@ button:hover {
   border-radius: 20px;
 }
 
+#Temperature__person {
+  margin: 20px;
+  text-align: center;
+  color: var(--secondary-text);
+  font-weight: bold;
+  border-radius: 20px;
+}
+
 .About {
   color: var(--secondary-text);
   object-fit: cover;
@@ -482,10 +502,56 @@ button:hover {
 
 .info {
   color: var(--secondary-text);
+  text-decoration: none;
+  list-style: none;
+}
+.info ul {
+  list-style: none;
+}
+.info ul li a {
+  text-decoration: none;
+  font-size: 200%;
+  color: var(--secondary-text);
+}
+
+.info ul li a:hover {
+  color: var(--green);
+  margin: 10px;
+  padding: 10px;
+}
+.source {
+  color: var(--secondary-text);
+  text-decoration: none;
+  list-style: none;
 }
 
 .source img {
   object-fit: cover;
-  width: 20px;
-  height: 20px;
+  /* background-color: var(--base-variant); */
+  width: 40px;
+  height: 40px;
+}
+
+.source a {
+  text-decoration: none;
+  font-size: 200%;
+  color: var(--secondary-text);
+}
+
+.source a:hover {
+  color: var(--green);
+}
+.footer {
+  color: var(--secondary-text);
+  text-decoration: none;
+  list-style: circle;
+}
+
+.footer a {
+  color: var(--secondary-text);
+  font-size: 200%;
+}
+
+.footer a:hover {
+  color: var(--green);
 }

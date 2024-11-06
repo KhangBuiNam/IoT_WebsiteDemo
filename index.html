@@ -145,35 +145,39 @@
 </div>
     </div>
     <div id="graph" class="content">
-      <div class="banner">
-        <div id="temp__thingspeak">
-          <h2>Nhiet do moi truong</h2>
-          <iframe
-            width="450"
-            height="260"
-            style="border: 1px solid #a1a1a1"
-            src="https://thingspeak.com/channels/2700213/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"
-          ></iframe>
+        <div class="banner">
+          <div class="chart">
+            <div id="temp__thingspeak">
+              <h2>Nhiệt độ môi trường:</h2>
+              <iframe
+                src="https://thingspeak.com/channels/2700213/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"
+              ></iframe>
+            </div>
+            <div id="hum__thingspeak">
+              <h2>Độ ẩm không khí:</h2>
+              <iframe
+                src="https://thingspeak.com/channels/2700213/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"
+              ></iframe>
+            </div>
+          </div>
         </div>
-        <div id="hum__thingspeak">
-          <h2>Do am</h2>
-          <iframe
-            width="450"
-            height="260"
-            style="border: 1px solid #a1a1a1"
-            src="https://thingspeak.com/channels/2700213/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"
-          ></iframe>
+        <div class="banner">
+          <div class="chart">
+            <div id="Heart__rate">
+              <h2>Nhịp tim</h2>
+              <iframe
+                src="https://thingspeak.com/channels/2700213/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"
+              ></iframe>
+            </div>
+            <div id="Temperature__person">
+              <h2>Nhiệt độ cơ thể</h2>
+              <iframe
+                src="https://thingspeak.com/channels/2700213/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"
+              ></iframe>
+            </div>
+          </div>
         </div>
-        <div id="Heart__rate">
-          <h2>Nhip tim</h2>
-          <iframe
-            width="450"
-            height="260"
-            style="border: 1px solid #cccccc"
-            src="https://thingspeak.com/channels/2700213/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"
-          ></iframe>
-        </div>
-      </div>
+
     </div>
     <div id="about" class="content">
       <div class="container">
@@ -196,20 +200,25 @@
     <div id="contact" class="content">
       <div class="container">
         <div class="info">
-          <h3>Mọi thông tin xin liên hệ:</h3>
+          <h1>Mọi thông tin xin liên hệ:</h1>
           <ul>
             <li><a href="https://facebook.com/khang.buinam.3/"><i class="fa-brands fa-facebook"></i></> Facebook</a></li>
-            <li> <a href="https://twitter.com/BuiNamKhang"><i class="fa-brands fa-twitter"></i></a> Twitter</li>
+            <li> <a href="https://twitter.com/BuiNamKhang"><i class="fa-brands fa-twitter"></i> Twitter</a></li>
             <li> <a href="https://www.linkedin.com/in/khang-bui-nam-83a918252/"><i class="fa-brands fa-linkedin"></i> Linkedin</a></li>
+          </ul>
+          <h1>Liên hệ hỗ trợ:</h1>
+          <ul>
+            <li><a href="tel:901234567"> <i class="fas fa-phone-alt"></i> <p>(+84) 33303 1752</p> </a></li>
+            <li><a href="mailto:info@me.com"> <i class="fas fa-envelope"></i> <p>khang.buinam.2147@gmail.com</p> </a></li>
           </ul>
         </div>
         <div class="source">
-          <h3>Mã nguồn dự án:</h3>
+          <h1>Mã nguồn dự án:</h1>
           <img src="img/github.png" alt="My source">
           <a href="https://github.com/KhangBuiNam/Dashboard_IoT_Websever">https://github.com/KhangBuiNam/Dashboard_IoT_Websever</a>
         </div>
         <div class="footer">
-          <h3>Tài liệu tham khảo: </h3>
+          <h1>Tài liệu tham khảo: </h1>
             <ul>
               <li><a href="https://coding2go.com/">https://coding2go.com/</a></li>
               <li><a href="https://github.com/Sunflowerc401/web_app_firebase">https://github.com/Sunflowerc401/web_app_firebase</a></li>
