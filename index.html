@@ -47,7 +47,10 @@
     <div id="dashboard" class="content active">
       <div class="banner">
         <div class="timereal">
-          <div id="timeLabel"></div>
+         <p>
+            <div id="timeLabel"></div>
+            <i class="fa-solid fa-clock"></i>
+         </p>
           <div id="dateLabel"></div>
         </div>
         <div class="humidity">
@@ -186,7 +189,7 @@
       dbRef.on("value", (snap) => (nhietdo.innerText = snap.val()));
 
       var nhiptim = document.getElementById("nhiptim");
-      var dbRef2 = firebase.database().ref().child("Nhip tim");
+      var dbRef2 = firebase.database().ref().child("heartRate");
       dbRef2.on("value", (snap) => (nhiptim.innerText = snap.val()));
 
       var doam = document.getElementById("doam");
