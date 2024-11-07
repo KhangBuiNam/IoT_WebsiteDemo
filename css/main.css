@@ -341,7 +341,7 @@ button:hover {
 }
 
 .heart {
-  color: #f8f8f8;
+  color: var(--secondary-text);
   background-color: rgba(98, 119, 85, 0.5);
   flex: 1;
   font-weight: bold;
